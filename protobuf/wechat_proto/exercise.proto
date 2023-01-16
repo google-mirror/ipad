@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+message ModHardDevice{
+  optional HardDevice hardDevice=1;
+  optional HardDeviceAttr hardDeviceAttr=2;
+}
+message HardDevice{
+  optional string deviceType=1;
+  optional string deviceId=2;
+}
+message HardDeviceAttr{
+  optional string brandName=1;
+  optional string authKey=2;
+}
+message GetBoundHardDevicesRequest{
+  required BaseRequest BaseRequest = 1;
+  optional uint32 version=2;
+}
+message GetBoundHardDevicesResponse{
+  required BaseResponse BaseResponse = 1;
+  optional uint32 count=2;
+  repeated ModHardDevice deviceList=5;
+  optional uint32 version=6;
+  optional uint32 countinueFlag=7;
+}
+message UploadDeviceStepRequest{
+  required BaseRequest BaseRequest = 1;
+  optional string deviceID=2;
+  optional string deviceType=3;
+  optional uint32 fromTime=4;
+  optional uint32 toTime=5;
+  optional uint32 stepCount=6;
+  optional string timeZone=7;
+  optional string bundleid=8;
+  optional string appname=9;
+  optional uint32 m7StepCount=10;
+  optional uint32 phoneModel=11;
+  optional SportDeviceInfo deviceInfo=12;
+  optional uint32 hkStepCount=13;
+}
+message UploadDeviceStepResponse{
+  required BaseResponse BaseResponse = 1;
+  optional SportDeviceInfo deviceInfo=2;
+}
+
+message SportDeviceInfo{
+  optional string bundleid=1;
+  optional string appname=2;
+  optional uint32 stepCount=3;
+  optional bool isAppleWatch=4;
+  optional bool isWhiteList=5;
+  optional bool isLocalIphone=6;
+}

@@ -1,0 +1,138 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message FinderSyncRequest{
+
+}
+message FinderStatsReportResponse{
+
+}
+
+message FinderSearchRequest{
+  optional BaseRequest baseRequest = 1;
+  optional string UserKey=2;
+  optional uint32 Offset=3;
+  optional bytes  T=4;
+  optional uint32 Scene=5;
+  optional string Uuid=6;
+  optional FinderTxRequest FinderTxRequest=7;
+}
+message FinderTxRequest{
+  optional int32  Userver=1;
+  optional int32 Scene=2;
+  optional bytes ExtSpamInfo =3;
+  optional int32 T  =4;
+  optional FinderZd G =5;
+  optional int64 Tg =6;
+}
+
+message FinderZd{
+  optional string G1=1;
+  optional string G2=2;
+  optional string G3=3;
+}
+
+message FinderSearchResponse{
+  optional BaseResponse baseResponse = 1;
+  repeated FinderVtm Vtm=2;
+  optional int32 Offset =3;
+  optional  int32  ContinueFlag =4;
+  optional  FinderObject Object=5;
+  optional bytes  T=6;
+  optional string  Uuid =7;
+}
+
+message FinderObject{
+  optional bytes Info=1;
+}
+
+
+message FinderVtm{
+  optional FinderContact Contact=1;
+  optional string Html=2;
+  optional string  Introduc=3;
+  optional int32  FansCount=4;
+  optional int32  FriendFollow=5;
+  optional string  GIo=6;
+}
+
+message FinderContact{
+  optional string Username=1;
+  optional string  Nickname=2;
+  optional string HeadUrl=3;
+  optional uint64 Seq=4;
+  optional string Signature=5;
+  optional int32 FollowFlag=6;
+  optional int32 FollowTime=7;
+  optional bytes  AuthInfo=8;
+  optional string  CoverImgUrl=9;
+  optional int32 SpamStatus=10;
+  optional int32  ExtFlag=11;
+  optional bytes ExtInfo=12;
+  optional int32 OriginalFlag=13;
+  optional FinderAqt OriginalInfo=14;
+  optional int32  LiveStatus=15;
+  optional bytes  MsgInfo=16;
+  optional int32  OriginalEntranceFlag=17;
+}
+
+message  FinderAqt {
+  optional  int32 G1 =1;
+  optional  int32 G2 =2;
+  optional  int32 G3 =3;
+  optional  int32 G4 = 4;
+  optional  int32 G5 =5;
+}
+
+message FinderUserPrepareRequest{
+  optional BaseRequest baseRequest = 1;
+  optional int32 Scene=2;
+  optional FinderTxRequest FinderTxRequest=3;
+}
+message FinderUserPrepareResponse{
+  optional BaseResponse baseResponse = 1;
+  optional int32 ActionType=2;
+  optional FinderNicknameVerifyInfo VerifyInfo=3;
+  optional FinderContact SelfContact =4;
+  optional int32 UserFlag=5;
+  optional string NicknameModifyWording=6;
+  optional string GKc=7;
+  optional string GKd=8;
+  optional int32 GKe=9;
+  optional int32 T=10;
+  optional int32 GKf=11;
+  optional int32 G=12;
+  optional bytes GKg=13;
+  optional int32 GT=14;
+  optional int32 GKi=15;
+}
+
+message FinderNicknameVerifyInfo{
+  optional string VerifyPrefix=1;
+  optional string BannerWording=2;
+  optional string VerifyLink=3;
+  optional string Appname=4;
+  optional string VerifyNickname=5;
+  optional string HeadImgUrl=6;
+  optional int32 ErrScene=7;
+  optional string G=8;
+  optional string T=9;
+}
+
+message FinderFollowRequest{
+  optional string FinderUsername=2;
+  optional int32 OpType=3;
+  optional uint64 RefObjectId=4;
+  optional string PosterUsername=5;
+  optional FinderTxRequest FinderReq=7;
+  optional string Cook=8;
+  optional int32 EnterType=9;
+}
+message FinderFollowResponse{
+  optional BaseResponse baseResponse = 1;
+  optional FinderContact Contact=2;
+}

@@ -1,0 +1,177 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+message WxaExternalInfo {
+  optional string HostAppId = 1;
+  optional int32 Scene = 2;
+  optional int32 SourceEnv = 3;
+}
+
+message JSLoginRequest {
+  required BaseRequest BaseRequest = 1;
+  optional string AppId = 2;
+  optional string Scope = 3;
+  optional int32 loginType = 4;
+  optional string Url      = 5;
+  optional string State    = 6;
+  optional int32  VersionType = 7;
+  optional WxaExternalInfo WxaExternalInfo = 8;
+}
+
+message JSAPIBaseResponse {
+  required int32  ErrCode = 1;
+  required string ErrMsg  = 2;
+}
+
+message ScopeInfo {
+  optional string Scope = 1;
+  optional string Desc  = 2;
+  optional int32 AuthState = 3;
+  optional string ExtDesc = 4;
+  optional string AuthDesc = 5;
+}
+
+message JSLoginResponse {
+  required BaseResponse BaseResponse = 1;
+  optional JSAPIBaseResponse JSAPIBaseResponse = 2;
+  optional string Code = 3;
+  optional ScopeInfo ScopeInfo = 4;
+  optional string AppName = 5;
+  optional string AppIconUrl = 6;
+  optional string OpenId = 7;
+  optional string SessionKey = 8;
+  optional string SessionTicket = 9;
+  optional int32  Lifespan = 10;
+  optional string State = 11;
+  optional string Signature = 12;
+}
+
+message JSOperateWxDataRequest {
+  required BaseRequest BaseRequest = 1;
+  optional string AppId = 2;
+  optional bytes Data = 3;
+  optional string GrantScope = 4;
+  optional int32 Opt = 5;
+  optional int32 VersionType = 6;
+  optional WxaExternalInfo WxaExternalInfo = 7;
+}
+
+message JSOperateWxDataResponse {
+  required BaseResponse BaseResponse = 1;
+  required JSAPIBaseResponse JSAPIBaseResponse = 2;
+  required string Data = 3;
+  optional ScopeInfo ScopeInfo = 4;
+  optional string AppName = 5;
+  optional string AppIconUrl = 6;
+  optional string CancelWording = 9;
+  optional string AllowWording = 10;
+  optional string ApplyWording =11;
+}
+
+message SdkOauthAuthorizeReq {
+  required BaseRequest BaseRequest = 1;
+  optional string AppId = 2;
+  optional string Tag3 = 3;
+  optional string Tag4 = 4;
+  optional string Tag5 = 5;
+  optional string Tag8 = 8;
+  optional string Tag9 = 9;
+  optional string Tag10 = 10;
+  optional string Tag11 = 11;
+  optional uint32 Tag12 = 12;
+}
+
+message Tag3 {
+  optional string Tag1 = 1;
+  optional bytes Tag2 = 2;
+  optional uint32 Tag3 = 3;
+}
+
+message SdkOauthAuthorizeResp {
+  required BaseResponse BaseResponse = 1;
+  optional Tag3   Tag3               = 3;
+  optional string AppImgUrl          = 5;
+  optional string Code               = 6;
+}
+
+message SdkOauthAuthorizeConfirmReq {
+  required BaseRequest BaseRequest = 1;
+  optional uint32 Tag3 = 3;
+  optional string Tag4 = 4;
+  optional string Tag5 = 5;
+  optional string Tag6 = 6;
+  optional string Tag7 = 7;
+  optional uint32 Tag8 = 8;
+  optional string Tag9 = 9;
+  optional string Tag10 = 10;
+  optional string Tag11 = 11;
+  optional string Tag12 = 12;
+  optional uint32 Tag13 = 13;
+}
+
+message SdkOauthAuthorizeConfirmResp{
+  required BaseResponse BaseResponse = 1;
+  optional string Code = 3;
+}
+
+message SdkOauthAuthorizeConfirmNewReq {
+  required BaseRequest BaseRequest = 1;
+  optional uint32 Opt = 3;
+  repeated string Scope = 4;
+  optional string AppId = 5;
+  optional string State = 6;
+  optional string BundleId = 7;
+  optional uint32 AvatarId = 8;
+  optional string UniversalLink = 9;
+  optional string OpenSdkVersion = 10;
+  optional string SdkToken = 11;
+  optional string OpenSdkBundleId = 12;
+  optional uint32 SdkTokenChk = 13;
+}
+
+message SdkOauthAuthorizeConfirmNewResp {
+  required BaseResponse BaseResponse = 1;
+  optional string RedirectUrl = 2;
+  optional string WxToken = 3;
+  optional string UserConfirmRedirectUrl = 4;
+  optional string UserConfirmWording = 5;
+}
+
+message QRConnectAuthorizeReq {
+  required BaseRequest BaseRequest = 1;
+  optional string OAuthUrl = 2;
+}
+
+message QRConnectAuthorizeResp {
+  required BaseResponse BaseResponse = 1;
+  optional uint32 isReturnH5 = 2;
+  repeated string ScopeList = 3;
+  optional string AppId = 4;
+  optional string AppName = 5;
+  optional string AppIconUrl = 6;
+  repeated string avatarList = 7;
+  optional int32 IsBanModifyAvatar = 8;
+  optional uint32 AvatarLimit = 9;
+  optional uint32 DefaultAvatarId = 10;
+  optional string DefaultHeadImgUrl = 11;
+  optional string DefaultHeadImgFileid = 12;
+
+}
+
+
+message QRConnectAuthorizeConfirmReq {
+  required BaseRequest BaseRequest = 1;
+  optional string OAuthUrl = 2;
+  optional uint32 Opt = 3;
+  repeated string Scope = 4;
+  optional uint32 AvatarId = 5;
+
+}
+message QRConnectAuthorizeConfirmResp {
+  required BaseResponse BaseResponse = 1;
+}

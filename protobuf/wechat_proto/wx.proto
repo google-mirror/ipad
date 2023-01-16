@@ -1,0 +1,187 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message CheckCanSetAliasReq {
+  optional BaseRequest BaseRequest = 1;
+}
+
+message CheckCanSetAliasResp {
+  optional BaseResponse BaseResponse = 1;
+  repeated CheckCanSetAliasResult results = 2;
+  optional string ticket = 3;
+  optional uint32 verifyType = 4;
+  optional string verifyUrl = 5;
+}
+
+message CheckCanSetAliasResult {
+  optional string title = 1;
+  optional string desc = 2;
+  optional string result = 3;
+  optional bool isPass = 4;
+}
+
+message GetReportStrategyReq{
+  optional BaseRequest BaseRequest = 1;
+  optional string deviceBrand=2;
+  optional string osName=3;
+  optional string deviceModel=4;
+  optional string osVersion=5;
+  optional string languageVer=6;
+}
+
+message GetReportStrategyResp{
+  optional BaseResponse BaseResponse = 1;
+  optional int64 cnt=2;
+  repeated GetReportStrategyListResp list=3;
+}
+message GetReportStrategyListResp{
+  optional bytes list=1;
+}
+
+message RealTimeKVReportReq{
+  optional BaseRequest BaseRequest = 1;
+  optional string deviceBrand=2;
+  optional string osName=3;
+  optional string deviceModel=4;
+  optional string osVersion=5;
+  optional string languageVer=6;
+  optional int64 logId=7;
+  optional string value=8;
+}
+message RealTimeKVReportResp{
+  optional BaseResponse BaseResponse = 1;
+}
+
+
+message ExtDeviceLoginConfirmGetRequest {
+  optional string loginUrl = 1;
+  optional string deviceName = 2;
+}
+
+message ExtDeviceLoginConfirmGetResponse {
+  optional BaseResponse BaseResponse = 1;
+  optional ExtDeviceLoginConfirmOKRet okret = 2;
+  optional ExtDeviceLoginConfirmErrorRet errorRet = 3;
+  optional ExtDeviceLoginConfirmExpiredRet expiredRet = 4;
+  optional string deviceNameStr = 5;
+  optional uint32 loginClientVersion = 6;
+  optional uint32 funcCtrl = 7;
+}
+
+message ExtDeviceLoginConfirmOKRet {
+  optional uint32 iconType = 1;
+  optional string contentStr = 2;
+  optional string buttonOkStr = 3;
+  optional string buttonCancelStr = 4;
+  optional uint32 reqSessionLimit = 5;
+  optional uint32 confirmTimeOut = 6;
+  optional string loginedDevTip = 7;
+  optional string titleStr = 8;
+  optional string warningStr = 9;
+  optional string usageLink = 10;
+}
+
+message ExtDeviceLoginConfirmErrorRet {
+  optional uint32 iconType = 1;
+  optional string contentStr = 2;
+}
+
+message ExtDeviceLoginConfirmExpiredRet {
+  optional uint32 iconType = 1;
+  optional string contentStr = 2;
+  optional string buttonStr = 3;
+}
+
+message ExtDeviceLoginConfirmOKRequest {
+  optional string loginUrl = 1;
+  optional string sessionList = 2;
+  repeated string unReadChatContactList = 3;
+  optional uint64 syncMsg = 4;
+}
+
+message ExtDeviceLoginConfirmOKResponse {
+  optional BaseResponse BaseResponse = 1;
+  optional bytes msgContextPubKey = 2;
+}
+
+message SmsUpCheckExtInfo {
+  optional  uint32 checkCount = 1;
+  optional  uint32 isFinalCheck = 2;
+}
+
+message BindOpMobileRequest {
+  optional  BaseRequest BaseRequest = 1;
+  optional  string userName = 2;
+  optional  string mobile = 3;
+  optional  uint32 opcode = 4;
+  optional  string verifycode = 5;
+  optional  uint32 dialFlag = 6;
+  optional  string dialLang = 7;
+  optional  string authTicket = 8;
+  optional  uint32 forceReg = 9;
+  optional  string safeDeviceName = 10;
+  optional  string safeDeviceType = 11;
+  optional  SKBuiltinString_ randomEncryKey = 12;
+  optional  string language = 13;
+  optional  uint32 inputMobileRetrys = 14;
+  optional  uint32 adjustRet = 15;
+  optional  string clientSeqId = 16;
+  optional  uint32 mobileCheckType = 17;
+  optional  string regSessionId = 18;
+  optional  SKBuiltinString_ spamBuffer = 19;
+  optional  SKBuiltinString_ extSpamInfo = 20;
+  optional  string thirdAppAuthTicket = 21;
+  optional  SmsUpCheckExtInfo smsUpCheckExtInfo = 22;
+}
+
+
+message BindOpMobileResponse {
+  optional  BaseResponse BaseResponse = 1;
+  optional  string ticket = 2;
+  optional  string smsNo = 3;
+  optional  uint32 needSetPwd = 4;
+  optional  string pwd = 5;
+  optional  string username = 6;
+  optional  HostLists newHostList = 7;
+  optional  BuiltinIPList builtinIplist = 8;
+  optional  NetworkControl networkControl = 9;
+  optional  string authTicket = 10;
+  optional  uint32 safeDevice = 11;
+  optional  string cc = 12;
+  optional  uint32 obsoleteItem1 = 13;
+  optional  SafeDeviceListG safeDeviceList = 14;
+  optional  string pureMobile = 15;
+  optional  string formatedMobile = 16;
+  optional  ShowStyleKey showStyle = 17;
+  optional  uint32 mmtlsControlBitFlag = 18;
+  optional  string smsUpCode = 19;
+  optional  string smsUpMobile = 20;
+  optional  uint32 mobileCheckType = 21;
+  optional  string regSessionId = 22;
+  optional  uint32 restart = 23;
+}
+
+message SafeDeviceListG{
+  optional uint64 Count=1;
+  repeated SafeDeviceG SafeDeviceList=2;
+}
+
+message SafeDeviceG{
+  optional string Name=1;
+  optional string Uuid=2;
+  optional string DeviceType=3;
+  optional uint64 CreateTime=4;
+
+}
+
+
+message HostLists {
+  optional  uint32 Count = 1;
+  repeated  Host List = 2;
+}
+

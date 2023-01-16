@@ -1,0 +1,67 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message GetLbsLifeListRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 opcode = 2;
+    optional uint32 scene = 3;
+    optional SKBuiltinString_ buff = 4;
+    optional LbsLocation loc = 5;
+    optional string keyword = 6;
+    optional uint32 entryTime = 7;
+    optional uint32 isAutoQuery = 8;
+}
+message LbsLocation {
+    optional float longitude = 1;
+    optional float latitude = 2;
+    optional int32 precision = 3;
+    optional string macAddr = 4;
+    optional string cellId = 5;
+    optional int32 gpssource = 6;
+}
+message GetLbsLifeListResponse {
+    optional BaseResponse baseResponse = 1;
+    optional SKBuiltinString_ buff = 2;
+    optional uint32 iconCount = 3;
+    repeated string iconList = 4;
+    optional uint32 lifeCount = 5;
+    repeated LbsLife lifeList = 6;
+    optional uint32 continueFlag = 7;
+    optional string logoUrl = 8;
+    optional string searchId = 9;
+    optional int32 autoQueryInterval = 10;
+}
+
+message LbsLife {
+    optional string bid = 1;
+    optional string title = 2;
+    optional float price = 3;
+    optional uint32 iconIdxCount = 4;
+    repeated uint32 iconIdxList = 5;
+    optional uint32 descCount = 6;
+    repeated SKBuiltinString descList = 7;
+    optional float rate = 8;
+    optional string link = 9;
+    optional uint32 type = 10;
+    optional SKBuiltinString_ ctx = 11;
+    optional string poiUrl = 12;
+    optional SKBuiltinString_ weAppInfo = 13;
+    optional uint32 showType = 14;
+    optional uint32 showFlag = 15;
+}
+
+message GetAddressRequest {
+    optional BaseRequest baseRequest = 1;
+    optional double longitude = 2;
+    optional double latitude = 3;
+}
+
+message GetAddressResponse {
+    optional BaseResponse baseResponse = 1;
+    optional string retJson = 2;
+}
+

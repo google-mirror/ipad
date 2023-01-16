@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message MassSendRequest{
+  optional BaseRequest baseRequest = 1;
+  optional uint64 cameraType=13;
+  optional string clientId=4;
+  optional uint64 compressType=0x11;
+  optional SKBuiltinString_ dataBuffer=7;
+  optional uint64 dataStartPos=8;
+  optional uint64 dataTotalLen=9;
+  optional uint64 isSendAgain=0x10;
+  optional uint64 mediaTime=6;
+  optional uint64 msgType=5;
+  optional string thumbAeskey=0x17;
+  optional SKBuiltinString_ thumbData=12;
+  optional uint64 thumbHeight=0x16;
+  optional uint64 thumbStartPos=11;
+  optional uint64 thumbTotalLen=10;
+  optional string thumbUrl=20;
+  optional uint64 thumbWith=0x15;
+  optional string toList=2;
+  optional uint64 toListCount=15;
+  optional string toListMd5=3;
+  optional string videoAeskey=0x18;
+  optional uint64 videoSource=14;
+  optional string videoUrl=0x13;
+  optional uint64 voiceFormat=0x12;
+}
+message MassSendResponse{
+  optional BaseResponse baseResponse = 1;
+  optional uint64 dataStartPos=2;
+  optional uint64 maxSupport=4;
+  optional uint64 thumbStartPos=3;
+}

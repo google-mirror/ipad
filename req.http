@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8011/v1/message/NewSyncHistoryMessage?key=df8a100f-fe63-4dbc-9e69-580745d4aa11
+Content-Type: application/json
+
+{
+  "Scene": 1
+}
+
+### dad26a06-5726-4a5a-a320-e7708efab0b0
+POST http://127.0.0.1:8011/v1/message/NewSyncHistoryMessage?key=dad26a06-5726-4a5a-a320-e7708efab0b0
+Content-Type: application/json
+
+{
+  "Scene": 1
+}
+
+
+###
+### dad26a06-5726-4a5a-a320-e7708efab0b0
+GET http://127.0.0.1:8011/v1/login/GetLoginQrCode?key=dad26a06-5726-4a5a-a320-e7708efab0b1

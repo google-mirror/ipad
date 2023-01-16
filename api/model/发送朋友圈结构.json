@@ -1,0 +1,53 @@
+{
+  "ContentStyle": 1,
+  "Privacy": 0,
+  "Content": "asdasdadasd",
+  "MediaList": [
+    {
+      "ID": 1,
+      "Type": 1,
+      "Title": "asdasd",
+      "Description": "sadasd",
+      "Private": 0,
+      "UserData": "asdasdas",
+      "SubType": 0,
+      "URL": "sadasd",
+      "URLType": "asdasd",
+      "Thumb": "asdasd",
+      "ThumType": "asdasd",
+      "SizeWidth": "asdasd",
+      "SizeHeight": "",
+      "TotalSize": "",
+      "VideoWidth": "",
+      "VideoHeight": "",
+      "MD5": "",
+      "VideoMD5": "",
+      "VideoDuration": 0
+    },
+    {
+      "ID": 2,
+      "Type": 1,
+      "Title": "asdasd",
+      "Description": "sadasd",
+      "Private": 0,
+      "UserData": "asdasdas",
+      "SubType": 0,
+      "URL": "sadasd",
+      "URLType": "asdasd",
+      "Thumb": "asdasd",
+      "ThumType": "asdasd",
+      "SizeWidth": "asdasd",
+      "SizeHeight": "",
+      "TotalSize": "",
+      "VideoWidth": "",
+      "VideoHeight": "",
+      "MD5": "",
+      "VideoMD5": "",
+      "VideoDuration": 0
+    }
+  ],
+  "WithUserList": null,
+  "GroupUserList": null,
+  "BlackList": null,
+  "LocationInfo": null
+}

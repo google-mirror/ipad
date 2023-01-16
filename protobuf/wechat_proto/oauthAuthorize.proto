@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+message OauthAuthorizeReq{
+  required BaseRequest BaseRequest = 1;
+  optional string OauthUrl=2;
+  optional string BizUsername=3;
+  optional uint32 Scene=4;
+}
+
+message OauthAuthorizeResp{
+  required BaseResponse BaseResponse = 1;
+  optional string AppName=4;
+  optional string AppIconUrl=5;
+  optional string RedirectUrl=6;
+}

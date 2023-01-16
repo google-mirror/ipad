@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message ModChatRoomAccessVerifyRequest {
+  optional string chatRoomName = 1;
+  optional uint32 status = 2;
+}
+
+message AddChatRoomAdminRequest{
+  optional BaseRequest baseRequest = 1;
+  optional string chatRoomName = 2;
+  repeated string userNameList=3;
+}
+message AddChatRoomAdminResponse{
+  optional BaseResponse baseResponse = 1;
+}
+message DelChatRoomAdminRequest
+{
+  optional BaseRequest baseRequest = 1;
+  optional string chatRoomName = 2;
+  repeated string userNameList=3;
+}
+message DelChatRoomAdminResponse{
+  optional BaseResponse baseResponse = 1;
+}

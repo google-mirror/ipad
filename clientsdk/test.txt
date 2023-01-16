@@ -1,0 +1,19 @@
+xx_GetInputMD5Info a1 = balance_version=1587710934&bind_query_scene=1&bind_type_cond=all_type&city=Daxing&is_device_open_touch=1&is_root=1&province=Beijing, a2 = 131, a3 = 39E9602632C6F3766CCA9A9030378B83
+xx_GetInputMD5Info a1 = %^&*Tenpay!@#$, a2 = 14, a3 = 3ECA2F6FFA6D4952ABBACA5A7B067D23
+xx_TenpaySecureCtrlNS_Bcd2ToAscii a1 = 3ECA2F6FFA6D4952ABBACA5A7B067D23, a2 = 32, a3 = 0, a4 = >\M-J/o\M-zmIR\M-+\M-:\M-JZ{\^F}#\M^J, a5= 84
+xx_TenpaySecureCtrlNS_Des3 a1 = >\M-J/o\M-zmIR\M-+\M-:\M-JZ{\^F}#\M^J, a3 = \^H剘\^D\M-Fb2
+xx_TenpaySecureCtrlNS_Des3 a1 = >\M-J/o\M-zmIR\M-+\M-:\M-JZ{\^F}#\M^J, a3 = \M-:\M-S[WZ8\M-t\M-p
+xx_TenpaySecureCtrlNS_Des3 a1 = >\M-J/o\M-zmIR\M-+\M-:\M-JZ{\^F}#\M^J, a3 = \M-4\M^Z\M-(&\M^W=\^T
+xx_TenpaySecureCtrlNS_AsciiToBcd2.a1 = 0xde, 0x65, 0xf5, 0xac, 0xaf, 0x9a, 0xe2, 0xa7, 0x08, 0xe5, 0x89, 0x98, 0x04, 0xc6, 0x62, 0x32, 
+0xba, 0xd3, 0x5b, 0x57, 0x5a, 0x38, 0xf4, 0xf0, 0xb4, 0x9a, 0xa8, 0x26, 0x97, 0x3d, 0x0c, 0x14,
+xx_TenpaySecureCtrlNS_AsciiToBcd2 a2 = 32 a3 = DE65F5ACAF9AE2A708E5899804C66232BAD35B575A38F4F0B49AA826973D0C14
+TenpaySecureObject.SignWith3Des arg1 = balance_version=1587710934&bind_query_scene=1&bind_type_cond=all_type&city=Daxing&is_device_open_touch=1&is_root=1&province=Beijing, result = DE65F5ACAF9AE2A708E5899804C66232BAD35B575A38F4F0B49AA826973D0C14
+
+
+xx_GetInputMD5Info a1 = balance_version=1587710934&bind_query_scene=1&bind_type_cond=all_type&city=Daxing&is_device_open_touch=1&is_root=1&province=Beijing, a2 = 131, a3 = 39E9602632C6F3766CCA9A9030378B83
+xx_GetInputMD5Info a1 = %^&*Tenpay!@#$, a2 = 14, a3 = 3ECA2F6FFA6D4952ABBACA5A7B067D23
+xx_TenpaySecureCtrlNS_Bcd2ToAscii a1 = 3ECA2F6FFA6D4952ABBACA5A7B067D23, a2 = 32, a3 = 0, a4 = >\M-J/o\M-zmIR\M-+\M-:\M-JZ{\^F}#\M^J, a5= 84
+xx_TenpaySecureCtrlNS_AsciiToBcd2.a1 = 0xde, 0x65, 0xf5, 0xac, 0xaf, 0x9a, 0xe2, 0xa7, 0x08, 0xe5, 0x89, 0x98, 0x04, 0xc6, 0x62, 0x32, 
+0xba, 0xd3, 0x5b, 0x57, 0x5a, 0x38, 0xf4, 0xf0, 0xb4, 0x9a, 0xa8, 0x26, 0x97, 0x3d, 0x0c, 0x14,
+xx_TenpaySecureCtrlNS_AsciiToBcd2 a2 = 32 a3 = DE65F5ACAF9AE2A708E5899804C66232BAD35B575A38F4F0B49AA826973D0C14
+TenpaySecureObject.SignWith3Des arg1 = balance_version=1587710934&bind_query_scene=1&bind_type_cond=all_type&city=Daxing&is_device_open_touch=1&is_root=1&province=Beijing, result = DE65F5ACAF9AE2A708E5899804C66232BAD35B575A38F4F0B49AA826973D0C14

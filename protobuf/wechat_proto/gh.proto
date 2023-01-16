@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package wechat_proto;
+
+message ClickCommandRequest {
+  required BaseRequest BaseRequest = 1;
+  required uint32 ClickType = 2;
+  optional string ClickInfo = 3;
+  optional string BizUserName = 4;
+}
+
+message ClickCommandResponse {
+  required BaseResponse BaseResponse = 1;
+}

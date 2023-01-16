@@ -1,0 +1,39 @@
+{
+    "host": "127.0.0.1",
+    "port":"8011",
+    "workerpoolsize": 500,
+    "maxworkertasklen": 1000,
+    "redisConfig": {
+        "Host":            "127.0.0.1",
+        "Port":            6379,
+        "Db":              10,
+        "Pass":            "",
+        "MaxIdle":         10,
+        "MaxActive":       20,
+        "IdleTimeout":     30000,
+        "MaxConnLifetime": 30000,
+        "ConnectTimeout":  3000
+    },
+    "newsSynWxId":true,
+    "rocketMq": false,
+    "rocketMqHost": "47.108.64.250:9092",
+    "rocketAccessKey":"",
+    "rocketSecretKey":"",
+    "rabbitMq": false,
+    "topic": "wx_sync_msg_topic",
+    "rabbitMqUrl": "amqp://guest:guest@47.108.64.250:9092",
+    "kafka": false,
+    "kafkaUrl": "47.108.64.250:9092",
+    "kafkaUsername": "",
+    "kafkaPassword": "",
+    "dt": false,
+    "mySqlConnectStr": "root:root123@tcp(127.0.0.1:3306)/wechat_mmtls?charset=utf8mb4&parseTime=true&loc=Local&time_zone='Asia%2Fshanghai'",
+    "cluster": {
+        "clusterName":"",
+        "zkAddr": "",
+        "ectdAddr": ""
+    },
+    "logLevel": "0",
+    "DbType": ""
+
+}

@@ -1,0 +1,305 @@
+syntax = "proto2";
+
+import "wechat.proto";
+package wechat_proto;
+option go_package = "../wechat";
+enum SyncCmdID
+{
+  CmdIdAddMsg = 5;
+  CmdIdCloseMicroBlog = 12;
+  CmdIdDelChatContact = 7;
+  CmdIdDelContact = 4;
+  CmdIdDelContactMsg = 8;
+  CmdIdDelMsg=9;
+  CmdIdDelUserDomainEmail = 19;
+  CmdIdFunctionSwitch = 23;
+  CmdIdInviteFriendOpen = 22;
+  CmdIdMax = 201;
+  CmdIdModChatRoomMember = 15;
+  CmdIdModChatRoomNotify = 20;
+  CmdIdModChatRoomTopic = 27;
+  CmdIdModContact = 2;
+  CmdIdModContactDomainEmail = 17;
+  CmdIdModMicroBlog = 13;
+  CmdIdModMsgStatus = 6;
+  CmdIdModNotifyStatus = 14;
+  CmdIdModQContact = 24;
+  CmdIdModTContact=0;
+  CmdIdModUserDomainEmail = 18;
+  CmdIdModUserInfo = 1;
+  CmdIdOpenQQMicroBlog = 11;
+  CmdIdPossibleFriend = 21;
+  CmdIdPsmStat = 26;
+  CmdIdQuitChatRoom = 16;
+  CmdIdReport = 10;
+  //CmdInvalid = 0;
+  MM_FAV_SYNCCMD_ADDITEM = 200;
+  //MM_GAME_SYNCCMD_ADDMSG;
+  MM_SNS_SYNCCMD_ACTION = 46;
+  MM_SNS_SYNCCMD_OBJECT = 45;
+  MM_SYNCCMD_BRAND_SETTING = 47;
+  MM_SYNCCMD_KVCMD = 55;
+  NN_SYNCCMD_THEMESTAT = 37;
+  MM_SYNCCMD_KVSTAT = 36;
+  MM_SYNCCMD_DELBOTTLECONTACT = 34;
+  MM_SYNCCMD_DELETE_SNS_OLDGROUP = 56;
+  MM_SYNCCMD_DELETEBOTTLE = 32;
+  MM_SYNCCMD_MOGBOTTLECONTACT = 33;
+  MM_SYNCCMD_MODCHATROOMMEMBERDISPLAYNAME = 48;
+  // MM_SYNCCMD_MODCHATROOMMEMBERFLAG;
+  MM_SYNCCMD_MODDESCRIPTION = 54;
+  MM_SYNCCMD_MODDISTURBSETTING = 31;
+  MM_SYNCCMD_MODSNSNOLIST = 52;
+  MM_SYNCCMD_MODSNSUSERINFO = 51;
+  MM_SYNCCMD_MODUSERIMG = 35;
+  MM_SYNCCMD_NEWDELMSG = 53;
+  MM_SYNCCMD_UPDATESTAT = 30;
+  MM_SYNCCMD_USERINFOEXT = 44;
+  MM_SYNCCMD_WEBWXFUNCTIONSWITCH = 50;
+  OpenimContact = 400;
+  OpenimChatRoom = 0x193;
+}
+
+message SearchQYContactRequest{
+  optional string userName=1;
+  optional string tg=2;
+  optional uint64 fromScene=3;
+}
+
+message SearchQYContactResponse{
+  optional BaseResponse baseResponse = 1;
+  optional SearchQYContact info=2;
+  optional string link=3;
+}
+message SearchQYContact{
+    optional string UserName=1;
+    optional string Nickname=2;
+    optional string Pyinitial=3;
+    optional string Pinyin=4;
+    optional string Sex=5;
+    optional string Highpxpic=6;
+    optional string Pic=7;
+    optional string App=8;
+    optional int64 g=9;
+    optional string Info=10;
+    optional string v1=11 ;
+}
+message GetQYContactRequest{
+  optional string wxid=1;
+  optional string room=2;
+  optional string t=3;
+}
+message GetQYContactResponse{
+  optional int64 Continue=1;
+  repeated ContactInfo contactList=2;
+}
+
+message ContactInfo{
+  optional string Username=1;
+  optional string Nickname=2;
+  optional int64 Type=3;
+  optional string Remark=4;
+  optional string Highpxpic=5;
+  optional string Pic=6;
+  optional int64 G=7;
+  optional string Pyinitial=8;
+  optional string Pinyin=9;
+  optional string RemarkPyinitial=10;
+  optional string RemarkPy=11;
+  optional string Info=12;
+  optional string T=13;
+  optional string App=14;
+  optional int64 Sex=15;
+  //[ProtoMember(16, Options = MemberSerializationOptions.Required)]
+  //public string  Qwxid;
+}
+message QYVAddUserRequest{
+  optional string wxid=1;
+  optional string v1=2;
+}
+message QYVerifyUserRequest{
+  optional string wxid=1;
+  optional string content=2 ;
+  optional string v1=3;
+}
+message QYModChatRoomTopicRequest{
+  optional string g=1;
+  optional string p=2;
+}
+message QYSyncRequest{
+  optional BaseRequest baseRequest = 1;
+  optional int64 selector=2;
+  optional bytes Key=3;
+}
+message QYSyncRespone{
+  optional BaseResponse baseResponse = 1;
+  optional QYCmdList List=2;
+  optional int64 Continue=3;
+  optional bytes Key=4;
+}
+message QYCmdList{
+  optional int64 count=1;
+  repeated QYCmdItem list=2;
+}
+message QYCmdItem{
+  optional SyncCmdID cmdid=1;
+  optional DATA cmdg=2;
+}
+message Openimcontact{
+  optional string userName=1;
+}
+message CreateQYChatRoomRequest{
+  repeated Openimcontact memberList=1;
+}
+message CreateQYChatRoomResponese{
+  optional BaseResponse baseResponse = 1;
+  optional string Username=2;
+  repeated QYMemberResp memberList=3;
+  optional string  T=4;
+  optional string G=5;
+}
+message QYMemberResp{
+  optional string member=1;
+  optional int64 memberStatus=2;
+  optional string nickName=3;
+}
+message QYChatroomContactInfoResp{
+  optional string Username=1;
+  optional int64 modSetTimes=2;
+  optional QYChatroomInfo Info=3;
+  optional int64 ModSetTimes=4;
+  optional QYMemberList MemberList=5;
+  optional int64 t=6;
+  optional int64 G=7;
+  optional int64 P=8;
+  optional int64 tg=9;
+  optional string App=10;
+  optional int64 p=11;
+}
+
+message QYChatroomInfo{
+  optional string ChatroomOwner=1;
+  optional string Pic=2;
+  optional string pic=3;
+  optional int64 g=4;
+  optional string ChatroomNickname=5;
+  optional string Pyinitial=6;
+  optional string Pinyin=7;
+  optional string Announcement=8;
+  optional string Announcer=9;
+  optional int64 AnnouncementTime=10;
+  optional int64 CountMax=11;
+  optional int64 JoinMustApply=12;
+  optional float t=13;
+}
+
+message QYMemberList{
+  repeated QYMember MemberList=1;
+  optional int64 g=2;
+}
+
+message QYMember{
+  optional string Username=1;
+  optional string T=2;
+  optional string NicknameInChatroom=3;
+  optional string g=4;
+  optional string P=5;
+  optional int64 flag=6;
+  optional string G=7;
+  optional string tg=8;
+  optional string t=9;
+}
+
+message QWTransferChatRoomOwnerRequest{
+  optional string Username=1;
+  optional Openimcontact owner=2;
+}
+message QYAddChatRoomRequest{
+  optional string chatRoomName=1;
+  repeated Openimcontact memberList=2;
+  optional string t=3;
+}
+
+message QYAddChatRoomMemberResponse{
+  optional BaseResponse baseResponse = 1;
+  repeated QYMemberResp memberList=2;
+  optional string T=3;
+}
+
+message InviteQYChatRoomRequest{
+  optional string chatRoomName=1;
+  repeated Openimcontact memberList=2;
+}
+
+message QYDelChatRoomMemberRequest{
+  optional string Username=1;
+  repeated Openimcontact memberList=2;
+}
+
+message QYDelChatRoomMemberResponse{
+  optional BaseResponse baseResponse = 1;
+  repeated QYMemberResp memberList=2;
+}
+
+message QYChatroomContactResponse{
+  optional BaseResponse baseResponse = 1;
+  optional QYChatroomContactInfo info=2;
+}
+message QYChatroomContactInfo{
+  optional string Username=1;
+  optional int64 modSetTimes=2;
+  optional QYChatroomInfo Info=3;
+  optional int64 ModSetTimes=4;
+  optional QYMemberList MemberList=5;
+  optional int64 t=6;
+  optional int64 G=7;
+  optional int64 P=8;
+  optional int64 tg=9;
+  optional string App=10;
+  optional int64 p=11;
+}
+message QYGetQRCodeResponse{
+  optional BaseResponse baseResponse = 1;
+  repeated bytes qrcode=2;
+  optional string footerWording=3;
+  optional string link=4;
+}
+message QYChatRoomAdminRequest{
+  optional string chatRoomName=1;
+  repeated string memberList=2;
+}
+
+message QYAdminAcceptJoinChatRoomSet{
+  optional string g=1;
+  optional int64 p=2;
+}
+message QYAdminAddRequest{
+  optional string room=1;
+  optional Openimcontact username=2;
+  repeated Openimcontact usernamelist=3;
+  optional string key=4;
+}
+message GetQYChatroomMemberDetailResponse{
+  optional BaseResponse baseResponse = 1;
+  optional uint64 clientVersion=2;
+  optional QYChatRoomMemberData newChatroomData=3;
+}
+message QYChatRoomMemberData{
+  repeated QYChatRoomMemberInfo chatRoomMember=1;
+  optional uint64 infoMask=2;
+}
+message QYChatRoomMemberInfo{
+  optional string userName=1;
+  optional string nickName=2;
+  optional string displayName=3;
+  optional string bigHeadImgUrl=4;
+  optional string smallHeadImgUrl=5;
+  optional uint64 chatroomMemberFlag=6;
+  optional string appId=7;
+  optional string qy=8;
+  optional string linkman=9;
+}
+message GetQYChatroomMemberDetailRequest{
+  optional string chatroomUserName=1;
+  optional uint64 clientVersion=2;
+}

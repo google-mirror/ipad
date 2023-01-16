@@ -1,0 +1,357 @@
+syntax = "proto2";
+
+import "wechat.proto";
+import "syncitem.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message SnsUserPageRequest {
+    optional BaseRequest baseRequest = 1;
+    optional string firstPageMd5 = 2;
+    optional string username = 3;
+    optional uint64 maxId = 4;
+    optional uint32 source = 5;
+    optional uint64 minFilterId = 6;
+    optional uint32 lastRequestTime = 7;
+    optional uint32 filterType = 8;
+}
+
+message SnsUserPageResponse {
+    optional BaseResponse baseResponse = 1;
+    optional string firstPageMd5 = 2;
+    optional uint32 objectCount = 3;
+    repeated SnsObject objectList = 4;
+    optional uint32 objectTotalCount = 5;
+    optional SnsUserInfo snsUserInfo = 6;
+    optional uint32 newRequestTime = 7;
+    optional uint32 objectCountForSameMd5 = 8;
+    optional SnsServerConfig serverConfig = 9;
+    optional int64 limitedId = 10;
+    optional int64 continueId = 11;
+    optional string retTips = 12;
+}
+
+message SnsServerConfig {
+    optional uint32 postMentionLimit = 1;
+    optional uint32 copyAndPasteWordLimit = 2;
+}
+message SnsObject {
+    optional uint64 id = 1;
+    optional string username = 2;
+    optional string nickname = 3;
+    optional uint32 createTime = 4;
+    optional SKBuiltinString_ objectDesc = 5;
+    optional uint32 likeFlag = 6;
+    optional uint32 likeCount = 7;
+    optional uint32 likeUserListCount = 8;
+    // 点赞好友列表
+    repeated SnsCommentInfo likeUserList = 9;
+    optional uint32 commentCount = 10;
+    optional uint32 commentUserListCount = 11;
+    // 评论好友列表
+    repeated SnsCommentInfo commentUserList = 12;
+    optional uint32 withUserCount = 13;
+    optional uint32 withUserListCount = 14;
+    // 发送朋友圈时，提到的用户列表
+    repeated SnsCommentInfo withUserList = 15;
+    optional uint32 extFlag = 16;
+    optional uint32 noChange = 17;
+    optional uint32 groupCount = 18;
+    // 暂时不知道做什么用
+    repeated SnsGroup groupList = 19;
+    optional uint32 isNotRichText = 20;
+    optional string referUsername = 21;
+    optional uint64 referId = 22;
+    optional uint32 blackListCount = 23;
+    // 不可见的朋友
+    repeated SKBuiltinString blackList = 24;
+    optional uint32 deleteFlag = 25;
+    optional uint32 groupUserCount = 26;
+    // 可见的朋友
+    repeated SKBuiltinString groupUser = 27;
+    optional SKBuiltinString_ objectOperations = 28;
+    optional SnsRedEnvelops snsRedEnvelops = 29;
+    optional PreDownloadInfo preDownloadInfo = 30;
+    optional SnsWeAppInfo weAppInfo = 31;
+}
+message SnsRedEnvelops {
+    optional uint32 rewardCount = 1;
+    repeated SnsHBUserInfo rewardUserList = 2;
+    optional uint32 resourceId = 3;
+    optional uint32 reportId = 4;
+    optional uint32 reportKey = 5;
+}
+message PreDownloadInfo {
+    optional uint32 preDownloadPercent = 1;
+    optional uint32 preDownloadNetType = 2;
+    optional string noPreDownloadRange = 3;
+}
+message SnsWeAppInfo {
+    optional string mapPoiId = 1;
+    optional uint32 appId = 2;
+    optional string userName = 3;
+    optional string redirectUrl = 4;
+    optional uint32 showType = 5;
+    optional uint32 score = 6;
+}
+message SnsCommentInfo {
+    optional string username = 1;
+    optional string nickname = 2;
+    optional uint32 source = 3;
+    optional uint32 type = 4;
+    optional string content = 5;
+    optional uint32 createTime = 6;
+    optional uint32 commentId = 7;
+    optional uint32 replyCommentId = 8;
+    optional string replyUsername = 9;
+    optional uint32 isNotRichText = 10;
+    optional uint64 replyCommentId2 = 11;
+    optional uint64 commentId2 = 12;
+    optional uint32 deleteFlag = 13;
+    optional uint32 commentFlag = 14;
+}
+
+message SnsGroup {
+    optional uint64 groupId = 1;
+}
+
+message SnsHBUserInfo {
+    optional string username = 1;
+    optional uint32 createTime = 2;
+    optional SKBuiltinString_ hbbuffer = 3;
+}
+
+message SnsPostRequest {
+    optional BaseRequest baseRequest = 1;
+    optional SKBuiltinString_ objectDesc = 2;
+    optional uint32 withUserListCount = 3;
+    repeated SKBuiltinString withUserList = 4;
+    optional uint32 privacy = 5;
+    optional uint32 syncFlag = 6;
+    optional string clientId = 7;
+    optional uint32 postBgimgType = 8;
+    optional uint32 groupCount = 9;
+    repeated SnsGroup groupIds = 10;
+    optional uint32 objectSource = 11;
+    optional uint64 referId = 12;
+    optional uint32 blackListCount = 13;
+    repeated SKBuiltinString blackList = 14;
+    optional TwitterInfo twitterInfo = 15;
+    optional uint32 groupUserCount = 16;
+    repeated SKBuiltinString groupUser = 17;
+    optional SnsPostCtocUploadInfo ctocUploadInfo = 18;
+    optional SnsPostOperationFields snsPostOperationFields = 19;
+    optional SnsRedEnvelops snsRedEnvelops = 20;
+    optional SKBuiltinString_ poiInfo = 21;
+    optional string fromScene = 22;
+    optional CanvasInfo canvasInfo = 23;
+    optional uint32 mediaInfoCount = 24;
+    repeated MediaInfo mediaInfo = 25;
+    optional SnsWeAppInfo weAppInfo = 26;
+    optional SKBuiltinString_ clientCheckData = 27;
+    optional SKBuiltinString_ extSpamInfo = 28;
+}
+
+message TwitterInfo {
+    optional string oauthToken = 1;
+    optional string oauthTokenSecret = 2;
+}
+
+message SnsPostCtocUploadInfo {
+    optional uint32 flag = 1;
+    optional uint32 photoCount = 2;
+}
+
+message SnsPostOperationFields {
+    optional string shareUrlOriginal = 1;
+    optional string shareUrlOpen = 2;
+    optional string jsAppId = 3;
+    optional uint32 contactTagCount = 4;
+    optional uint32 tempUserCount = 5;
+}
+message CanvasInfo {
+    optional string dataBuffer = 1;
+}
+
+message MediaInfo {
+    optional uint32 source = 1;
+    optional uint32 mediaType = 2;
+    optional uint32 videoPlayLength = 3;
+    optional string sessionId = 4;
+    optional uint32 startTime = 5;
+}
+
+message SnsPostResponse {
+    optional BaseResponse baseResponse = 1;
+    optional SnsObject snsObject = 2;
+    optional string spamTips = 3;
+}
+
+message SnsObjectOpRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 opCount = 2;
+    repeated SnsObjectOp opList = 3;
+}
+
+message SnsObjectOpResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint32 opCount = 2;
+    repeated int32 opRetList = 3;
+}
+
+message SnsObjectOp {
+    optional uint64 id = 1;
+    optional uint32 opType = 2;
+    optional SKBuiltinString_ ext = 3;
+}
+
+message SnsObjectOpDeleteComment {
+    optional uint32 commentId = 1;
+}
+
+message SnsCommentRequest {
+    optional BaseRequest baseRequest = 1;
+    optional SnsActionGroup action = 2;
+    optional string clientId = 3;
+}
+
+message SnsCommentResponse {
+    optional BaseResponse baseResponse = 1;
+    optional SnsObject snsObject = 2;
+}
+
+message ModSnsBlackList {
+    optional string contactUsername = 1;
+    optional uint32 modType = 2;
+}
+
+message SnsTagMemberOptionRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 opCode = 2;
+    optional uint64 tagId = 3;
+    optional string tagName = 4;
+    optional uint32 count = 5;
+    repeated SKBuiltinString list = 6;
+    optional uint32 scene = 7;
+}
+
+message SnsTagMemberOptionResponse {
+    optional BaseResponse baseResponse = 1;
+    optional SnsTag snsTag = 2;
+}
+
+message SnsTag {
+    optional uint64 tagId = 1;
+    optional string tagName = 2;
+    optional uint32 count = 3;
+    repeated SKBuiltinString list = 4;
+}
+
+message SnsTagListRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 opCode = 2;
+    optional string tagListMd5 = 3;
+}
+
+message SnsTagListResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint32 opCode = 2;
+    optional string tagListMd5 = 3;
+    optional uint32 count = 4;
+    repeated SnsTag list = 5;
+    optional uint32 state = 6;
+}
+
+message SnsTimeLineRequest {
+    optional BaseRequest baseRequest = 1;
+    optional string firstPageMd5 = 2;
+    optional uint64 maxId = 3;
+    optional uint64 minFilterId = 4;
+    optional uint32 lastRequestTime = 5;
+    optional uint64 clientLatestId = 6;
+    optional SKBuiltinString_ session = 7;
+    optional uint32 networkType = 8;
+    optional SnsAdExpInfo adexpinfo = 10;
+    optional uint32 realFeedExposureIdsCount = 11;
+    repeated uint64 realFeedExposureIds = 12;
+    optional uint32 updateTimelineScene = 13;
+    optional uint32 pullType = 14;
+    optional uint64 minIdForGetPrePage = 15;
+    optional uint64 minIdForCheckUnread = 16;
+}
+
+message SnsAdExpInfo {
+    optional uint64 hateFeedid = 1;
+    optional uint32 hateTimestamp = 2;
+}
+
+message SnsTimeLineResponse {
+    optional BaseResponse baseResponse = 1;
+    optional string firstPageMd5 = 2;
+    optional uint32 objectCount = 3;
+    repeated SnsObject objectList = 4;
+    optional uint32 newRequestTime = 5;
+    optional uint32 objectCountForSameMd5 = 6;
+    optional uint32 controlFlag = 7;
+    optional SnsServerConfig serverConfig = 8;
+    optional uint32 advertiseCount = 9;
+    repeated AdvertiseObject advertiseList = 10;
+    optional SKBuiltinString_ session = 11;
+    optional uint32 recCount = 12;
+    repeated RecObject recList = 13;
+    optional uint32 delAdvertiseCount = 14;
+    repeated DelAdvertiseObject delAdvertiseList = 15;
+    optional uint32 countForCheckUnread = 16;
+    repeated uint64 idListForCheckUnread = 17;
+}
+
+message DelAdvertiseObject {
+    optional uint64 id = 1;
+}
+
+message AdvertiseObject {
+    optional SnsADObject snsAdobject = 1;
+    optional SKBuiltinString adinfo = 2;
+    optional uint32 adpos = 3;
+    optional RemindFriendsInfo remindFriendsInfo = 4;
+}
+
+message SnsADObject {
+    optional SnsObject snsObject = 1;
+    optional SKBuiltinString adxml = 2;
+}
+
+message RecObject {
+    optional SnsRecommendObject snsRecommendObject = 1;
+    optional SKBuiltinString recommendInfo = 2;
+}
+
+message SnsRecommendObject {
+    optional SnsObject snsObject = 1;
+    optional SKBuiltinString recommendXml = 2;
+}
+
+message SnsObjectDetailRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint64 id = 2;
+    optional uint32 groupDetail = 3;
+}
+
+message SnsObjectDetailResponse {
+    optional BaseResponse baseResponse = 1;
+    optional SnsObject object = 2;
+}
+
+message SnsSyncRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 selector = 2;
+    optional SKBuiltinString_ keyBuf = 3;
+}
+
+message SnsSyncResponse {
+    optional BaseResponse baseResponse = 1;
+    optional CmdList cmdList = 2;
+    optional uint32 continueFlag = 3;
+    optional SKBuiltinString_ keyBuf = 4;
+}

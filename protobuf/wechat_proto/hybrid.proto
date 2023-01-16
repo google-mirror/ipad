@@ -1,0 +1,36 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message EcdhPacket{
+  required uint32 Type = 1; //固定为1
+  required Buffer_t Key = 2;//第5步生成的publickey
+  required bytes Token = 3;//第8步结果
+  optional string Url = 4; //空串
+  optional bytes ProtobufData = 5;//第10步结果
+}
+
+message HybridDecryptResponse {
+  required Buffer_t Key = 1;//第5步生成的publickey
+  required uint32 Type = 2;
+  required bytes ProtobufData = 3;//第8步结果
+  optional bytes token = 4; //空串
+}
+
+message HybridEcdhRequest{
+  optional int32 type = 1;
+  optional Buffer_t SecECDHKey = 2;
+  optional bytes randomkeydata = 3;
+  optional bytes randomkeyextenddata = 4;
+  optional bytes encyptdata = 5;
+}
+
+message HybridEcdhResponse{
+  optional Buffer_t SecECDHKey = 1;
+  optional int32 type = 2;
+  optional bytes decryptdata = 3;
+  optional bytes randomkeyextenddata = 4;
+}

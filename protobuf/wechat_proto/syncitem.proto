@@ -1,0 +1,244 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message ModUserInfo {
+    optional uint32 bitFlag = 1;
+    optional SKBuiltinString userName = 2;
+    optional SKBuiltinString nickName = 3;
+    optional uint32 bindUin = 4;
+    optional SKBuiltinString bindEmail = 5;
+    optional SKBuiltinString bindMobile = 6;
+    optional uint32 status = 7;
+    optional uint32 imgLen = 8;
+    //图片 base64字符串
+    optional bytes imgBuf = 9;
+    optional uint32 sex = 10;
+    optional string province = 11;
+    optional string city = 12;
+    optional string signature = 13;
+    optional uint32 personalCard = 14;
+    optional DisturbSetting disturbSetting = 15;
+    optional uint32 pluginFlag = 16;
+    optional uint32 verifyFlag = 17;
+    optional string verifyInfo = 18;
+    optional uint32 point = 19;
+    optional uint32 experience = 20;
+    optional uint32 level = 21;
+    optional uint32 levelLowExp = 22;
+    optional uint32 levelHighExp = 23;
+    optional string weibo = 24;
+    optional uint32 pluginSwitch = 25;
+    optional GmailList gmailList = 26;
+    optional string alias = 27;
+    optional string weiboNickname = 28;
+    optional uint32 weiboFlag = 29;
+    optional uint32 faceBookFlag = 30;
+    optional int64 fbuserId = 31;
+    optional string fbuserName = 32;
+    optional uint32 albumStyle = 33;
+    optional uint32 albumFlag = 34;
+    optional string albumBgimgId = 35;
+    optional uint32 txnewsCategory = 36;
+    optional string fbtoken = 37;
+    optional string country = 38;
+}
+message DisturbSetting {
+    optional uint32 nightSetting = 1;
+    optional DisturbTimeSpan nightTime = 2;
+    optional uint32 allDaySetting = 3;
+    optional DisturbTimeSpan allDayTime = 4;
+}
+message DisturbTimeSpan {
+    optional uint32 beginTime = 1;
+    optional uint32 endTime = 2;
+}
+message GmailList {
+    optional uint32 count = 1;
+}
+message DelContact {
+    optional SKBuiltinString userName = 1;
+    optional uint32 deleteContactScene = 2;
+}
+message DelChatContact {
+    optional SKBuiltinString userName = 1;
+}
+message ModChatRoomMember {
+    optional SKBuiltinString userName = 1;
+    optional SKBuiltinString nickName = 2;
+    optional SKBuiltinString pyinitial = 3;
+    optional SKBuiltinString quanPin = 4;
+    optional uint32 sex = 5;
+    optional SKBuiltinString_ imgBuf = 6;
+    optional uint32 imgFlag = 7;
+    optional SKBuiltinString remark = 8;
+    optional SKBuiltinString remarkPyinitial = 9;
+    optional SKBuiltinString remarkQuanPin = 10;
+    optional uint32 contactType = 11;
+    optional string province = 12;
+    optional string city = 13;
+    optional string signature = 14;
+    optional uint32 personalCard = 15;
+    optional uint32 verifyFlag = 16;
+    optional string verifyInfo = 17;
+    optional string weibo = 18;
+    optional string verifyContent = 19;
+    optional string weiboNickname = 20;
+    optional uint32 weiboFlag = 21;
+    optional uint32 albumStyle = 22;
+    optional uint32 albumFlag = 23;
+    optional string albumBgimgId = 24;
+    optional string alias = 25;
+    optional SnsUserInfo snsUserInfo = 26;
+    optional string country = 27;
+    optional string bigHeadImgUrl = 28;
+    optional string smallHeadImgUrl = 29;
+    optional string myBrandList = 30;
+    optional CustomizedInfo customizedInfo = 31;
+}
+message QuitChatRoom {
+    optional SKBuiltinString chatRoomName = 1;
+    optional SKBuiltinString userName = 2;
+}
+message ModChatRoomNotify {
+    optional SKBuiltinString chatRoomName = 1;
+    optional uint32 status = 2;
+}
+message InviteFriendOpen {
+    optional string userName = 1;
+    optional uint32 friendType = 2;
+}
+message FunctionSwitch {
+    optional uint32 functionId = 1;
+    optional uint32 switchValue = 2;
+}
+message ModChatRoomTopic {
+    optional SKBuiltinString chatRoomName = 1;
+    optional SKBuiltinString chatRoomTopic = 2;
+}
+message ModBottleContact {
+    optional string userName = 1;
+    optional uint32 type = 2;
+    optional uint32 sex = 3;
+    optional string city = 4;
+    optional string province = 5;
+    optional string signature = 6;
+    optional uint32 imgFlag = 7;
+    optional uint32 hdimgFlag = 8;
+    optional string country = 9;
+    optional string bigHeadImgUrl = 10;
+    optional string smallHeadImgUrl = 11;
+}
+message ModUserImg {
+    optional uint32 imgType = 1;
+    optional uint32 imgLen = 2;
+    //图片 base64字符串
+    optional bytes imgBuf = 3;
+    optional string imgMd5 = 4;
+    optional string bigHeadImgUrl = 5;
+    optional string smallHeadImgUrl = 6;
+}
+message UserInfoExt {
+    optional SnsUserInfo snsUserInfo = 1;
+    optional string myBrandList = 2;
+    optional string msgPushSound = 3;
+    optional string voipPushSound = 4;
+    optional uint32 bigChatRoomSize = 5;
+    optional uint32 bigChatRoomQuota = 6;
+    optional uint32 bigChatRoomInvite = 7;
+    optional string safeMobile = 8;
+    optional string bigHeadImgUrl = 9;
+    optional string smallHeadImgUrl = 10;
+    optional uint32 mainAcctType = 11;
+    optional SKBuiltinString extXml = 12;
+    optional SafeDeviceList safeDeviceList = 13;
+    optional uint32 safeDevice = 14;
+    optional uint32 grayscaleFlag = 15;
+    optional string googleContactName = 16;
+    optional string idcardNum = 17;
+    optional string realName = 18;
+    optional string regCountry = 19;
+    optional string bbppid = 20;
+    optional string bbpin = 21;
+    optional string bbmnickName = 22;
+    optional LinkedinContactItem linkedinContactItem = 23;
+    optional string kfinfo = 24;
+    optional PatternLockInfo patternLockInfo = 25;
+    optional string securityDeviceId = 26;
+    optional uint32 payWalletType = 27;
+    optional string weiDianInfo = 28;
+    optional uint32 walletRegion = 29;
+    optional int64 extStatus = 30;
+    optional string f2FpushSound = 31;
+    optional uint32 userStatus = 32;
+    optional int64 paySetting = 33;
+}
+message SafeDeviceList {
+    optional uint32 count = 1;
+}
+message PatternLockInfo {
+    optional uint32 patternVersion = 1;
+    optional SKBuiltinString_ sign = 2;
+    optional uint32 lockStatus = 3;
+}
+message SnsActionGroup {
+    optional uint64 id = 1;
+    optional uint64 parentId = 2;
+    optional SnsAction currentAction = 3;
+    optional SnsAction referAction = 4;
+    optional string clientId = 5;
+    optional uint32 objectCreateTime = 6;
+}
+message SnsAction {
+    optional string fromUsername = 1;
+    optional string toUsername = 2;
+    optional string fromNickname = 3;
+    optional string toNickname = 4;
+    optional uint32 type = 5;
+    optional uint32 source = 6;
+    optional uint32 createTime = 7;
+    optional string content = 8;
+    optional uint32 replyCommentId = 9;
+    optional uint32 commentId = 10;
+    optional uint32 isNotRichText = 11;
+    optional int64 replyCommentId2 = 12;
+    optional int64 commentId2 = 13;
+    optional SKBuiltinString_ hbbuffer = 14;
+    optional uint32 commentFlag = 15;
+    optional RemindFriendsInfo remindFriendsInfo = 16;
+}
+
+message RemindFriendsInfo {
+    optional uint32 adgroupId = 1;
+    optional SKBuiltinString_ sourceInfo = 2;
+    optional SKBuiltinString_ selfInfo = 3;
+    optional SKBuiltinString_ paidInfo = 4;
+    optional SKBuiltinString_ extraInfo = 5;
+    optional uint64 adgroupId64 = 6;
+}
+
+message NewDelMsg {
+    optional string fromUserName = 1;
+    optional string toUserName = 2;
+    optional uint32 msgId = 3;
+    optional uint32 msgType = 4;
+    optional int64 newMsgId = 5;
+}
+
+message SyncControl {
+    optional uint32 useInitContact = 1;
+}
+
+message GetProfileRequest {
+    optional BaseRequest baseRequest = 1;
+    optional string userName = 2;
+}
+
+message GetProfileResponse {
+    optional BaseResponse baseResponse = 1;
+    optional ModUserInfo userInfo = 2;
+    optional UserInfoExt userInfoExt = 3;
+}

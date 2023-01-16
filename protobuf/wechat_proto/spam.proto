@@ -1,0 +1,123 @@
+syntax = "proto2";
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+
+message DeviceRunningInfoNew {
+    required bytes Version = 1;
+    required uint32 Type = 2;
+    required bytes EncryptData = 3;
+    required uint32 Timestamp = 4;
+    required uint32 Unknown5 = 5;
+    required uint32 Unknown6 = 6;
+}
+
+message WCExtInfoNew {
+    optional Buffer_t Wcstf = 1 ;
+    optional Buffer_t Wcste = 2 ;
+    optional Buffer_t CcData = 3 ;
+    optional Buffer_t UserAttrInfo = 4 ;
+    optional Buffer_t AcgiDeviceInfo = 5 ;
+    optional Buffer_t AcgiTuring = 6 ;
+    optional Buffer_t DeviceToken = 7 ;
+    optional Buffer_t IosturingHuman = 101 ;
+    optional Buffer_t IosturingOwner = 102 ;
+}
+message SpamDataBody {
+    required int32 UnKnown1 = 1;
+    required uint32 TimeStamp = 2;
+    required int32 KeyHash = 3;
+    required string Yes1 = 11;
+    required string Yes2 = 12;
+    required string IosVersion = 13;
+    required string DeviceType = 14;
+    required int32 UnKnown2  = 15;
+    required string IdentifierForVendor = 16;
+    required string AdvertisingIdentifier  = 17;
+    required string Carrier = 18;
+    required int32 BatteryInfo = 19;
+    required string NetworkName = 20;
+    required int32 NetType = 21;
+    required string AppBundleId = 22;
+    required string DeviceName = 23;
+    required string UserName = 24;
+    required int64 Unknown3 = 25;
+    required int64 Unknown4 = 26;
+    required int32 Unknown5 = 27;
+    required int32 Unknown6 = 28;
+    required string Lang = 29;
+    required string Country = 30;
+    required int32 Unknown7 = 31;
+    required string DocumentDir = 32;
+    required int32 Unknown8 = 33;
+    required int32 Unknown9 = 34;
+    required string HeadMD5 = 35;
+    required string AppUUID = 36;
+    required string SyslogUUID = 37;
+    required string Unknown10 = 38;
+    required string Unknown11 = 39;
+    required string AppName  = 40;
+    optional string SshPath = 41;
+    optional string TempTest = 42;
+    optional string DevMD5 = 43;
+    optional string DevUser = 44;
+    optional string DevPrefix = 45;
+    repeated FileInfo AppFileInfo = 46;
+    required string Unknown12 = 47;
+    required int32 IsModify = 50;
+    required string ModifyMD5 = 51;
+    required int64 RqtHash = 52;
+    required uint64 Unknown53 = 53;
+    required uint64 Unknown54 = 54;
+    required uint64 Unknown55 = 55;
+    required int64  Unknown56 = 56;
+    required uint64 Unknown57 = 57;
+    required string Unknown58 = 58;
+    optional string Unknown59 = 59;
+    optional string Unknown60 = 60;
+    optional string Unknown61 = 61;
+    optional uint64 Unknown62 = 62;
+    optional string Unknown63 = 63;
+    optional string Unknown64 = 64;
+    optional uint64 Unknown70 = 70;
+    optional uint64 Unknown72 = 72;
+    optional uint64 Unknown82 = 82;
+    optional uint64 Unknown83 = 83;
+    optional uint64 Unknown84 = 84;
+}
+
+message FileInfo {
+    optional string Filepath = 1;
+    optional string Fileuuid = 2;
+}
+
+message NewClientCheckData {
+    optional int64 C32cData = 1;
+    optional int64 TimeStamp = 2;
+    optional bytes DataBody = 3;
+}
+
+message WCSTF {
+    required uint64 StartTime = 1;
+    required uint64 CheckTime = 2;
+    required uint32 Count = 3;
+    repeated uint64 EndTime = 4;
+}
+
+message WCSTE {
+    required string CheckId = 1;
+    required uint32 StartTime = 2;
+    required uint32 CheckTime = 3;
+    required uint32 Count1 = 4;
+    required uint32 Count2 = 5;
+    required uint32 Count3 = 6;
+    required uint64 Const1 = 7;
+    required uint64 Const2 = 8;
+    required uint64 Const3 = 9;
+    required uint64 Const4 = 10;
+    required uint64 Const5 = 11;
+    required uint64 Const6 = 12;
+}

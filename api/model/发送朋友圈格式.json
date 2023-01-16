@@ -1,0 +1,95 @@
+//图文
+{
+	"ContentStyle": 1,
+	"MediaList": [
+		{
+			"ThumType": "1",
+			"Thumb": "调用上传朋友圈图片接口返回",
+			"Description": "",
+			"Type": 2,
+			"MD5": "dc3d66d0fdc3e51f7abad00373854f58",
+			"SizeWidth": "800",
+			"VideoDuration": 0,
+			"UserData": "",
+			"VideoMD5": "",
+			"Title": "",
+			"URLType": "1",
+			"VideoHeight": "",
+			"ID": 1,
+			"SizeHeight": "800",
+			"TotalSize": "126335",
+			"URL": "http://mmsns.qpic.cn/mmsns/PiajxSqBRaELqLq7KFRSzPrYTViaAFrzicTOp5uXczOTiadcrCkFQH1uWibXc0ZyX6kAd/0",
+			"VideoWidth": "",
+			"SubType": 0,
+			"Private": 0
+		}
+	],
+	"Privacy": 0,
+	"Content": "休闲时刻😚零食来一波~"
+}
+//文字
+{
+	"ContentStyle": 2,
+	"Privacy": 0,
+	"Content": "\n休闲时刻😚零食来一波\r\n夏威夷果奶油味坚果"
+}
+//视频
+{
+	"ContentStyle": 15,
+	"MediaList": [
+		{
+			"ThumType": "1",
+			"Thumb": "调用上传朋友圈图片接口返回",
+			"Description": "",
+			"Type": 2,
+			"MD5": "dc3d66d0fdc3e51f7abad00373854f58",
+			"SizeWidth": "800",
+			"VideoDuration": 0,
+			"UserData": "",
+			"VideoMD5": "",
+			"Title": "",
+			"URLType": "1",
+			"VideoHeight": "",
+			"ID": 1,
+			"SizeHeight": "800",
+			"TotalSize": "126335",
+			"URL": "http://aitao.wingscode.com/aitao/upload/663c78e5-1eca-40ca-98a3-8c5f109694b3.mp4?token=54fc22a143276ca331de63d706c0b8bd",
+			"VideoWidth": "",
+			"SubType": 0,
+			"Private": 0
+		}
+	],
+	"Privacy": 0,
+	"Content": "休闲时刻可口n大人小孩都爱吃"
+}
+//链接
+{
+	"ContentStyle": 3,
+	"ContentUrl":"https://mp.weixin.qq.com/mp/homepage?__biz=MzA5MDQ5NTE5MQ==&amp;hid=1&amp;sn=8dccd03f475fec450f2f14b4690e247b&amp;scene=18&amp;devicetype=iOS12.4.3&amp;version=1700112a&amp;lang=zh_CN&amp;nettype=WIFI&amp;ascene=7&amp;session_us=gh_f5ed87696bbf&amp;fontScale=100&amp;pass_ticket=gM1DjNqeOCQghv7AQfAg41js%2FqFjJL87XQwUqv7V3HbGK8yxaNQ1FK%2B40xvX21P4&amp;wx_header=1&amp;scene=2",
+	"Description":"一个字读懂中国建筑——宫",
+	"MediaList": [
+		{
+			"ThumType": "1",
+			"Thumb": "http://szmmsns.qpic.cn/mmsns/DtE8MdW3UaMFPCO2PEm76HiafHmLXHbdAibbeNVDFs0mF7kqyhic4Lar5UdicZiahKmtxnuqYicBBQ920/150",
+			"Description": "",
+			"Type": 2,
+			"MD5": "",
+			"SizeWidth": "800",
+			"VideoDuration": 0,
+			"UserData": "",
+			"VideoMD5": "",
+			"Title": "艺术笔迹",
+			"URLType": "0",
+			"VideoHeight": "",
+			"ID": 1,
+			"SizeHeight": "800",
+			"TotalSize": "126335",
+			"URL": "http://mmbiz.qpic.cn/mmbiz_jpg/Ro4nV0WxTiaQgvyffia62XWMaEJnm1l7nrgHjNNhlIJom9ZD8KYn3iavIZJaAaFKC6W2UcKSDJoxW8QPUoWjA7Z6w/0",
+			"VideoWidth": "",
+			"SubType": 0,
+			"Private": 0
+		}
+	],
+	"Privacy": 0,
+	"Content": "鞯地苛左工地~"
+}

@@ -1,0 +1,100 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+message LbsRequest{
+  required BaseRequest BaseRequest = 1;
+  optional uint64 opCode=2;
+  optional float longitude=3;
+  optional float latitude=4;
+  optional int64 precision=5;
+  optional string macAddr=6;
+  optional string cellId=7;
+  optional int64 gPSSource=8;
+}
+message LbsResponse{
+  optional BaseResponse baseResponse = 1;
+  optional uint64 contactCount=2;
+  repeated LbsContactInfo contactList=3;
+  optional uint64 flushTime=5;
+  optional uint64 isShowRoom=6;
+  optional uint64 roomMemberCount=7;
+  optional uint64 state=4;
+}
+message LbsContactInfo{
+  optional string  alias=12;
+  optional string ntispamTicket=0x1a;
+  optional string bigHeadImgUrl=0x16;
+  optional string city=4;
+  optional CustomizedInfos customizedInfo=0x19;
+  optional string distance=6;
+  optional int64 headImgVersion=0x13;
+  optional uint64 imgStatus=8;
+  optional string myBrandList=0x18;
+  optional string nickName=2;
+  optional string province=3;
+  optional int64 sex=7;
+  optional string signature=5;
+  optional string smallHeadImgUrl=0x17;
+  optional SnsUserInfo SnsUserInfo=20;
+  optional string userName=1;
+  optional string verifyContent=11;
+  optional string verifyInfo=10;
+  optional string weibo=13;
+  optional uint64 weiboFlag=15;
+  optional string weiboNickname=14;
+}
+message CustomizedInfos{
+  optional uint64 brandFlag=1;
+  optional string externalInfo=2;
+  optional string brandInfo=3;
+  optional string brandIconURL=4;
+}
+message GetUserRankLikeCountRequest{
+  required BaseRequest BaseRequest = 1;
+  optional bool latestRank=2;
+  optional string rankId=3;
+  optional string appUsername=4;
+  optional string username=5;
+}
+
+message GetUserRankLikeCountResponse{
+  optional BaseResponse baseResponse = 1;
+  repeated AffectedUser affectedUserList=2;
+  repeated FriendLike friendLikeList=3;
+  repeated string follows=4;
+  optional string championCoverUrl=5;
+  optional string championMotto=6;
+  optional string rankId=7;
+  optional string shareTitle=8;
+  optional string fic=9;
+  optional bool hasCoverUrl=10;
+  optional string fId=11;
+  repeated LikeUser likeUserList=12;
+  optional bool fIf=13;
+  optional string fIn=14;
+  optional bool fIo=15;
+  optional int64 fIp=16;
+  optional string fIq=17;
+}
+message LikeUser{
+   optional int64 index=1;
+   optional string username=2;
+   optional int64 khq=3;
+}
+message FriendLike{
+  optional int64 oKf=1;
+  optional string username=2;
+}
+message AffectedUser{
+  optional int64 gwi=3;
+  optional int64 gwj=4;
+  optional int64 gwk=5;
+  optional int64  score=2;
+  optional string userName=1;
+}
+

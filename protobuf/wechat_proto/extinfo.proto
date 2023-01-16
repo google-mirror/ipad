@@ -1,0 +1,100 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+
+message FPFresh {
+  optional  BaseRequest baseRequest = 1;
+  optional  bytes SessKey = 2;
+  optional  ZTData Ztdata = 3;
+}
+
+
+
+
+message ZTData{
+  optional bytes Version = 1;
+  optional uint64 Encrypted =2;
+  optional bytes Data=3;
+  optional int64 TimeStamp=4;
+  optional uint64 OpType=5;
+  optional uint64 Uin=6;
+}
+
+message DeviceRunningInfos{
+  optional bytes Version = 1;
+  optional int64 Type=2;
+  optional bytes EncryptData=3;
+  optional int64 TimeStamp=4;
+  optional uint64 Unknown5=5;
+  optional uint64 Unknown6=6;
+}
+
+message TrustDeviceInfo{
+  optional string Key=1;
+  optional string Val=2;
+}
+
+message TrustReq{
+  optional TrustData Td=1;
+}
+
+message TrustData{
+  repeated TrustDeviceInfo Tdi=1;
+}
+
+message TrustRequest{
+  required BaseRequest BaseRequest = 1;
+  optional bytes RandomKey=2;
+  optional bytes spamBuff=3;
+
+}
+message TrustResp{
+  required BaseResponse BaseResponse = 1;
+  optional TrustResponseData TrustResponseData=2;
+}
+
+message TrustResponseData{
+  optional TrustSoftData SoftData=2;
+  optional string DeviceToken=3;
+  optional uint64 Timestamp=4;
+}
+
+message TrustSoftData{
+  optional string SoftConfig=1;
+  optional bytes SoftData=2;
+}
+
+message SendPatRequest{
+  required BaseRequest BaseRequest = 1;
+  optional string fromUsername=2;
+  optional string chatUsername=3;
+  optional string pattedUsername=4;
+  optional string clientMsgId=5;
+  optional int64 scene=6;
+}
+message SendPatResponse{
+  required BaseResponse BaseResponse = 1;
+  optional string patSuffix=4;
+  optional string selfMsg=3;
+  optional int64 msgId=5;
+  optional int64 patSuffixVersion=6;
+}
+message SendPatSetRequest{
+  optional int64 cmd=1;
+  optional SetPat setPat=2;
+}
+message SetPat{
+  optional int64 cmId=1;
+  optional PatMod patMod=2;
+}
+message PatMod{
+  optional int64 value=1;
+  optional string name=2;
+}
+message SnsObjectOpExt{
+  optional uint32 id=1;
+}

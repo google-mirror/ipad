@@ -1,0 +1,93 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message FavSyncRequest {
+    optional uint32 selector = 1;
+    optional SKBuiltinString_ keyBuf = 3;
+}
+
+message FavSyncResponse {
+    optional int32 ret = 1;
+    optional CmdList cmdList = 2;
+    optional SKBuiltinString_ keyBuf = 3;
+    optional uint32 continueFlag = 4;
+}
+
+message BatchDelFavItemRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 count = 2;
+    optional bytes favIdList = 3;
+}
+
+message BatchDelFavItemResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint32 count = 2;
+    repeated DelFavItemRsp list = 3;
+}
+
+message BatchGetFavItemRequest {
+    optional BaseRequest baseRequest = 1;
+    optional uint32 count = 2;
+    optional bytes favIdList = 3;
+}
+
+message BatchGetFavItemResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint32 count = 2;
+    repeated FavObject objectList = 3;
+}
+
+message AddFavItem {
+    optional uint32 favId = 1;
+    optional uint32 type = 2;
+    optional uint32 flag = 3;
+    optional uint32 updateTime = 4;
+    optional uint32 updateSeq = 5;
+}
+
+message GetFavInfoRequest {
+    optional BaseRequest baseRequest = 1;
+}
+
+message GetFavInfoResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint64 usedSize = 2;
+    optional uint64 totalSize = 3;
+    optional uint32 mxFavFileSize = 4;
+    optional uint32 mxAutoUploadSize = 5;
+    optional uint32 mxAutoDownloadSize = 6;
+}
+
+message AddFavItemRequest {
+    optional BaseRequest baseRequest = 1;
+    optional string clientId = 2;
+    optional uint32 type = 3;
+    optional uint32 sourceType = 4;
+    optional string sourceId = 5;
+    optional string object = 6;
+}
+
+message AddFavItemResponse {
+    optional BaseResponse baseResponse = 1;
+    optional uint32 favId = 2;
+    optional uint32 updateSeq = 3;
+    optional uint64 usedSize = 4;
+}
+
+message DelFavItemRsp {
+    optional int32 ret = 1;
+    optional uint32 favId = 2;
+}
+
+message FavObject {
+    optional uint32 favId = 1;
+    optional int32 status = 2;
+    optional string object = 3;
+    optional uint32 flag = 4;
+    optional uint32 updateTime = 5;
+    optional uint32 updateSeq = 6;
+}

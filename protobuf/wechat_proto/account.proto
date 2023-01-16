@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message GetSafetyInfoRequest{
+   required BaseRequest BaseRequest = 1;
+}
+
+message GetSafetyInfoResponse{
+  required BaseResponse BaseResponse = 1;
+  required DeviceInfo ContactUsernameList = 2;
+}
+
+message DeviceInfo {
+  repeated SafeDevice SafeDevices = 1;
+}
+
+message SafeDevice {
+  optional string Name = 1;
+  optional string Uuid = 2;
+  optional string DeviceType = 3;
+  required uint32 CreateTime = 4;
+}
+
+
+message DelSafeDeviceRequest {
+  required BaseRequest BaseRequest = 1;
+  optional string Uuid = 2;
+}
+
+message DelSafeDeviceResponse {
+  required BaseResponse BaseResponse = 1;
+  optional uint32 SafeDevice = 2;
+}

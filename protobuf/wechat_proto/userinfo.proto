@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message oplogUserNameRequest{
+   optional uint32 CmId=1;
+   optional userInfo userInfo=2;
+}
+
+message userInfo{
+   optional uint32 code=1;
+   optional infoNew infoNew=2;
+}
+
+message infoNew{
+   optional uint32 infoCode=1;
+   optional string nickName=2;
+}

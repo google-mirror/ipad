@@ -1,0 +1,15 @@
+syntax = "proto2";
+import "wechat.proto";
+
+package wechat_proto;
+option go_package = "../wechat";
+
+message QYOpLogRequest{
+  optional int64 type = 1;
+  optional bytes V = 2;
+}
+
+message ModInfo{
+  optional uint32 cmd=1;
+  optional string value=2;
+}
