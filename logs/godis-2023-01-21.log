@@ -1,0 +1,87 @@
+[INFO][server.go:44] 2023/01/21 14:05:04 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:05:04 accept link
+[INFO][server.go:73] 2023/01/21 14:05:08 accept link
+[INFO][server.go:74] 2023/01/21 14:05:32 connection closed: 127.0.0.1:59968
+[INFO][server.go:73] 2023/01/21 14:05:34 accept link
+[INFO][server.go:73] 2023/01/21 14:05:34 accept link
+[INFO][server.go:107] 2023/01/21 14:05:45 handler shutting down...
+[INFO][server.go:54] 2023/01/21 14:05:45 shutting down...
+[INFO][server.go:107] 2023/01/21 14:05:45 handler shutting down...
+[INFO][server.go:44] 2023/01/21 14:11:31 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:11:31 accept link
+[INFO][server.go:73] 2023/01/21 14:11:35 accept link
+[INFO][server.go:74] 2023/01/21 14:11:37 connection closed: 127.0.0.1:60199
+[INFO][server.go:73] 2023/01/21 14:11:46 accept link
+[INFO][server.go:73] 2023/01/21 14:11:46 accept link
+[INFO][server.go:107] 2023/01/21 14:12:13 handler shutting down...
+[INFO][server.go:54] 2023/01/21 14:12:13 shutting down...
+[INFO][server.go:74] 2023/01/21 14:12:13 connection closed: 127.0.0.1:60231
+[INFO][server.go:107] 2023/01/21 14:12:13 handler shutting down...
+[INFO][server.go:74] 2023/01/21 14:12:13 connection closed: 127.0.0.1:60232
+[INFO][server.go:44] 2023/01/21 14:12:22 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:12:22 accept link
+[INFO][server.go:73] 2023/01/21 14:12:26 accept link
+[INFO][server.go:74] 2023/01/21 14:12:29 connection closed: 127.0.0.1:60282
+[INFO][server.go:73] 2023/01/21 14:12:50 accept link
+[INFO][server.go:73] 2023/01/21 14:12:50 accept link
+[INFO][server.go:74] 2023/01/21 14:13:21 connection closed: 127.0.0.1:60345
+[INFO][server.go:74] 2023/01/21 14:13:21 connection closed: 127.0.0.1:60346
+[INFO][server.go:73] 2023/01/21 14:13:21 accept link
+[INFO][server.go:74] 2023/01/21 14:14:38 connection closed: 127.0.0.1:60360
+[INFO][server.go:73] 2023/01/21 14:14:38 accept link
+[INFO][server.go:73] 2023/01/21 14:16:08 accept link
+[INFO][server.go:74] 2023/01/21 14:16:08 connection closed: 127.0.0.1:60391
+[INFO][server.go:74] 2023/01/21 14:16:39 connection closed: 127.0.0.1:60426
+[INFO][server.go:73] 2023/01/21 14:16:39 accept link
+[INFO][server.go:73] 2023/01/21 14:16:54 accept link
+[INFO][server.go:74] 2023/01/21 14:17:10 connection closed: 127.0.0.1:60443
+[INFO][server.go:73] 2023/01/21 14:17:10 accept link
+[INFO][server.go:74] 2023/01/21 14:17:26 connection closed: 127.0.0.1:60462
+[INFO][server.go:73] 2023/01/21 14:17:26 accept link
+[INFO][server.go:54] 2023/01/21 14:18:33 shutting down...
+[INFO][server.go:107] 2023/01/21 14:18:33 handler shutting down...
+[INFO][server.go:107] 2023/01/21 14:18:33 handler shutting down...
+[INFO][server.go:74] 2023/01/21 14:18:33 connection closed: 127.0.0.1:60284
+[INFO][server.go:44] 2023/01/21 14:18:45 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:18:45 accept link
+[INFO][server.go:73] 2023/01/21 14:18:49 accept link
+[INFO][server.go:107] 2023/01/21 14:19:05 handler shutting down...
+[INFO][server.go:74] 2023/01/21 14:19:05 connection closed: 127.0.0.1:60610
+[INFO][server.go:54] 2023/01/21 14:19:05 shutting down...
+[INFO][server.go:107] 2023/01/21 14:19:05 handler shutting down...
+[INFO][server.go:44] 2023/01/21 14:19:12 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:19:12 accept link
+[INFO][server.go:73] 2023/01/21 14:19:16 accept link
+[INFO][server.go:74] 2023/01/21 14:19:17 connection closed: 127.0.0.1:60652
+[INFO][server.go:107] 2023/01/21 14:20:02 handler shutting down...
+[INFO][server.go:54] 2023/01/21 14:20:02 shutting down...
+[INFO][server.go:74] 2023/01/21 14:20:02 connection closed: 127.0.0.1:60654
+[INFO][server.go:107] 2023/01/21 14:20:02 handler shutting down...
+[INFO][server.go:107] 2023/01/21 14:20:02 handler shutting down...
+[INFO][server.go:44] 2023/01/21 14:20:09 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2023/01/21 14:20:09 accept link
+[INFO][server.go:73] 2023/01/21 14:20:13 accept link
+[INFO][server.go:73] 2023/01/21 14:20:15 accept link
+[INFO][server.go:74] 2023/01/21 14:20:15 connection closed: 127.0.0.1:60747
+[INFO][server.go:74] 2023/01/21 14:20:52 connection closed: 127.0.0.1:60749
+[INFO][server.go:73] 2023/01/21 14:20:52 accept link
+[INFO][server.go:73] 2023/01/21 14:20:52 accept link
+[INFO][server.go:74] 2023/01/21 14:21:32 connection closed: 127.0.0.1:60821
+[INFO][server.go:74] 2023/01/21 14:21:32 connection closed: 127.0.0.1:60822
+[INFO][server.go:73] 2023/01/21 14:21:32 accept link
+[INFO][server.go:73] 2023/01/21 14:21:32 accept link
+[INFO][server.go:74] 2023/01/21 14:22:03 connection closed: 127.0.0.1:60892
+[INFO][server.go:74] 2023/01/21 14:22:03 connection closed: 127.0.0.1:60891
+[INFO][server.go:73] 2023/01/21 14:22:03 accept link
+[INFO][server.go:73] 2023/01/21 14:22:03 accept link
+[INFO][server.go:74] 2023/01/21 14:22:41 connection closed: 127.0.0.1:60949
+[INFO][server.go:74] 2023/01/21 14:22:41 connection closed: 127.0.0.1:60948
+[INFO][server.go:73] 2023/01/21 14:22:41 accept link
+[INFO][server.go:73] 2023/01/21 14:22:41 accept link
+[INFO][server.go:74] 2023/01/21 14:23:31 connection closed: 127.0.0.1:61022
+[INFO][server.go:74] 2023/01/21 14:23:31 connection closed: 127.0.0.1:61021
+[INFO][server.go:73] 2023/01/21 14:23:31 accept link
+[INFO][server.go:54] 2023/01/21 14:24:04 shutting down...
+[INFO][server.go:107] 2023/01/21 14:24:04 handler shutting down...
+[INFO][server.go:74] 2023/01/21 14:24:04 connection closed: 127.0.0.1:60758
+[INFO][server.go:107] 2023/01/21 14:24:04 handler shutting down...
